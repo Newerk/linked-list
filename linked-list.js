@@ -34,8 +34,13 @@ class LinkedList {
     }
 
     size() {
-        //
-
+        let count = 1;
+        let tmp = this.head;
+        while (tmp.nextNode !== null) {
+            tmp = tmp.nextNode;
+            count ++;
+        }
+        return count;
     }
 
     head() {
@@ -58,7 +63,7 @@ class LinkedList {
         if (this.head === null) {
             this.head = new Node(value);
             return this.head;
-        } else {}
+        } else { }
         //
     }
 
@@ -66,7 +71,7 @@ class LinkedList {
         if (this.head === null) {
             this.head = new Node(value);
             return this.head;
-        } else {}
+        } else { }
         //
     }
 
@@ -91,9 +96,10 @@ let nodeC = new Node('🌍');
 let link = new LinkedList(new Node('👽'));
 link.append(nodeA);
 link.append(nodeB);
-console.log(JSON.stringify(link))
-
 link.prepend(nodeC);
-console.log(JSON.stringify(link))
+
+// console.log(JSON.stringify(link))
+
+console.log(link.size())
 
 
