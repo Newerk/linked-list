@@ -38,7 +38,7 @@ class LinkedList {
         let tmp = this.head;
         while (tmp.nextNode !== null) {
             tmp = tmp.nextNode;
-            count ++;
+            count++;
         }
         return count;
     }
@@ -52,13 +52,27 @@ class LinkedList {
         let tmp = this.head;
         while (tmp.nextNode !== null) {
             tmp = tmp.nextNode;
-            console.log('t')
         }
         return tmp;
     }
 
     at(index) {
-        //
+        let tmp = this.head;
+        let count = 0;
+        let storeNode;
+        while (tmp.nextNode !== null) {
+            if (count === index) {
+                return tmp;
+            }
+            tmp = tmp.nextNode;
+            count++;
+        }
+
+        if (index < 0 || index > count) {
+            console.log('Your index is out of the range');
+        } else {
+            return tmp;
+        }
     }
 
     pop() {
@@ -104,12 +118,8 @@ link.append(nodeA);
 link.append(nodeB);
 link.prepend(nodeC);
 
-// console.log(JSON.stringify(link))
+console.log(JSON.stringify(link.at(0)))
 
-console.log(JSON.stringify(link.listHead()));
-console.log(JSON.stringify(link.tail()))
-
-console.log(JSON.stringify(link))
 
 
 
