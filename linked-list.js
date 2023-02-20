@@ -43,12 +43,18 @@ class LinkedList {
         return count;
     }
 
-    head() {
-        //
+    listHead() {
+        let tmp = this.head;
+        return tmp;
     }
 
     tail() {
-        //
+        let tmp = this.head;
+        while (tmp.nextNode !== null) {
+            tmp = tmp.nextNode;
+            console.log('t')
+        }
+        return tmp;
     }
 
     at(index) {
@@ -100,6 +106,11 @@ link.prepend(nodeC);
 
 // console.log(JSON.stringify(link))
 
-console.log(link.size())
+console.log(JSON.stringify(link.listHead()));
+console.log(JSON.stringify(link.tail()))
+
+console.log(JSON.stringify(link))
+
+
 
 
