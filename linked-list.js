@@ -76,7 +76,15 @@ class LinkedList {
     }
 
     pop() {
-        //
+        let tmp = this.head;
+        while (tmp.nextNode.nextNode !== null) {
+            tmp = tmp.nextNode;
+        }
+        tmp.nextNode = null;
+        return tmp;
+
+
+
     }
 
     contains(value) {
@@ -117,8 +125,9 @@ let link = new LinkedList(new Node('👽'));
 link.append(nodeA);
 link.append(nodeB);
 link.prepend(nodeC);
+link.pop();
 
-console.log(JSON.stringify(link.at(0)))
+console.log(JSON.stringify(link))
 
 
 
