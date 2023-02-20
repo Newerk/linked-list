@@ -27,8 +27,10 @@ class LinkedList {
         if (this.head === null) {
             this.head = new Node(value);
             return this.head;
-        } else {}
-        // 
+        } else {
+            value.nextNode = this.head;
+            this.head = value;
+        }
     }
 
     size() {
@@ -87,10 +89,11 @@ let nodeB = new Node('🌙');
 let nodeC = new Node('🌍');
 
 let link = new LinkedList(new Node('👽'));
-link.head.nextNode = nodeA;
-link.head.nextNode.nextNode = nodeB;
+link.append(nodeA);
+link.append(nodeB);
+console.log(JSON.stringify(link))
 
-link.append(nodeC);
+link.prepend(nodeC);
 console.log(JSON.stringify(link))
 
 
